@@ -1,32 +1,47 @@
-# Project 1: Lightsail E-commerce Deployment
+# Project 1: AWS Lightsail E-commerce Website
 
-## Project Overview
-Deployed and managed a production-ready e-commerce website on AWS Lightsail for a small business client.
+## Overview
+This project involved deploying and managing a dynamic PHP-based e-commerce website on AWS Lightsail for a real client.
 
-## Problem
-The client required a cost-effective hosting solution for a PHP-based e-commerce website with public access, SSL security, stable performance, and simple operational management.
+## Business Problem
+The client needed a cost-effective, reliable online platform to showcase products and handle customer interactions without managing on-premise infrastructure.
 
-## Solution
-Designed and implemented a Lightsail-based architecture using a Linux instance running Apache with SSL/TLS enabled. The solution focused on simplicity, security, and cost efficiency.
+## Solution Architecture
+- AWS Lightsail (Compute)
+- Apache Web Server
+- PHP Application
+- MySQL Database
+- SSL Certificate (HTTPS)
+- GitHub for version control
 
-## Architecture
-Single AWS Lightsail instance hosting a PHP-based e-commerce application via Apache, secured with SSL/TLS.
+## My Responsibilities
+- Provisioned and configured AWS Lightsail instances
+- Deployed PHP application
+- Configured Apache virtual hosts
+- Managed SSL certificates
+- Set up staging and production environments
+- Implemented GitHub-based deployment workflow
+- Troubleshot networking, DNS, and permissions issues
 
 ## Security Considerations
-- HTTPS enabled via SSL/TLS
-- Controlled inbound traffic rules
+- HTTPS enabled using SSL
+- Limited server access via SSH
 - Basic server hardening
-- Awareness of staging vs production separation
+- Separation of staging and production environments
 
-## Outcome
-- Stable and secure e-commerce deployment
-- Reduced operational complexity
-- Clear path for future enhancements
+## Outcome / Results
+- Successfully deployed a live e-commerce website
+- Improved reliability and availability
+- Client received a production-ready cloud-hosted solution
 
-## Tools & Services
-AWS Lightsail, Apache, Linux, SSL, GitHub
+## Architecture Diagram
+*(To be added)*
 
-## Future Improvements
-- Monitoring and alerting
-- Automated backups
-- Scalability options if traffic increases
+## Screenshots
+*(To be added)*
+
+## Lessons Learned
+- Practical AWS Lightsail management
+- Real-world deployment challenges
+- Importance of staging environments
+- CI/CD basics with GitHub
