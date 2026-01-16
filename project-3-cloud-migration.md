@@ -144,7 +144,7 @@ Designed and implemented a comprehensive AWS cloud migration with high availabil
 
 ## Architecture Diagram
 
-![Enterprise Cloud Migration Architecture](diagrams/project-3-architecture.png)
+![Enterprise Cloud Migration Architecture](project-3-architecture.png)
 
 ## Technical Challenges Overcome
 
