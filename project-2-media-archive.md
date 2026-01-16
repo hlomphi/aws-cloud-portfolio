@@ -88,7 +88,7 @@ Designed and implemented a fully serverless, scalable media archive solution usi
 
 ## Architecture Diagram
 
-![Media Archive Architecture](diagrams/project-2-architecture.png)
+![Media Archive Architecture](project-2-architecture.png)
 
 ## Technical Challenges Overcome
 
