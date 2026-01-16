@@ -1,0 +1,31 @@
+# AWS Cloud Projects Portfolio  
+**Boitumelo Thabethe | Cloud Engineer**
+
+## About Me
+I am a Cloud Engineer with hands-on experience designing, deploying, and managing AWS-based solutions.  
+I specialize in practical, real-world cloud implementations with a strong focus on reliability, security, and cost efficiency.
+
+## Certifications
+- AWS Solutions Architect – Associate
+- AWS Security Specialty (in progress)
+- AWS Solutions Architect – Professional (planned)
+
+## Projects
+
+### 1. AWS Lightsail E-commerce Website
+- Deployed a PHP-based e-commerce platform on AWS Lightsail
+- Configured Apache, SSL, and MySQL
+- Implemented staging and production environments
+- GitHub-based deployment workflow
+
+📄 [View Project Details](project-1-lightsail-ecommerce.md)
+
+## Skills
+- AWS (Lightsail, EC2, IAM, SNS, S3)
+- Linux (Amazon Linux)
+- Apache / PHP / MySQL
+- GitHub & CI/CD basics
+- Cloud Security fundamentals
+
+## Contact
+- LinkedIn: https://www.linkedin.com/in/mbthabethe08
