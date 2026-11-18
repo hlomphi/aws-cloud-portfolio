@@ -34,6 +34,8 @@ The AWS partner funding application was approved and the platform was handed ove
 
 ## Architecture diagram
 
+The diagram separates authentication from document ingestion: Cognito authenticates users, but does not itself grant S3 access. The ingestion authorization mechanism is not evidenced here. Cross-region extraction arrows represent logical processing; they do not establish that de-identification or legal approval was completed.
+
 ![AI-Powered Document Intelligence Platform architecture](../diagrams/project-4-architecture.svg)
 
 [Editable Graphviz source](../diagrams/project-4-architecture.dot)
