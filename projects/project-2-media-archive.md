@@ -2,7 +2,7 @@
 
 ## Executive overview
 
-I designed a serverless archive for large media workloads. The professional CV reports a workload scale of 10 TB or more.
+I designed and implemented a serverless media archive adopted by a leading African podcast network, supporting over 10 TB of media workloads.
 
 ## Business challenge
 
@@ -14,11 +14,11 @@ A web interface uses Cognito for authentication and API Gateway and Lambda for u
 
 ## Technical implementation
 
-The design uses presigned URLs and multipart uploads. Parallel part transfers, retrying individual parts and handling interrupted uploads were design considerations. The web interface supports file management.
+The archive uses presigned URLs and multipart uploads. Parallel part transfers, retrying individual parts and handling interrupted uploads were design considerations. The web interface supports file management.
 
 ## Personal responsibilities
 
-I designed the ingestion, access and storage lifecycle architecture for the archive.
+I designed and implemented the archive, including its ingestion, access and storage lifecycle architecture.
 
 ## Security and governance
 
@@ -30,7 +30,7 @@ The lifecycle strategy moves eligible objects to archival tiers. S3 storage is c
 
 ## Project outcomes
 
-The engagement produced an archive design for the workload reported in the CV. Measured transfer performance and realised savings are unverified.
+The archive was implemented and used by the media production team. Measured transfer performance and realised savings are unverified.
 
 ## Architecture diagram
 
