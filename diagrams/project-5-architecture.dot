@@ -1,0 +1,15 @@
+digraph Architecture {
+ graph [rankdir=TB, bgcolor="#ffffff", fontname="DejaVu Sans", fontsize=22, fontcolor="#142c49", labelloc=t, pad=0.35, nodesep=0.35, ranksep=0.58, compound=true, label="Generative AI SaaS | Staging and production infrastructure"];
+ node [shape=box, style="rounded,filled", fillcolor="#edf4ff", color="#6183aa", fontcolor="#142c49", fontname="DejaVu Sans", fontsize=11, margin="0.16,0.10"];
+ edge [color="#456786", fontcolor="#314d6c", fontname="DejaVu Sans", fontsize=10, arrowsize=0.7];
+
+user [label="Users"]; dns [label="Cloudflare DNS"]; ci [label="GitHub Actions / Terraform"];
+subgraph cluster_aws {
+ label="AWS | Staging and production environments";
+ iam [label="AWS IAM / OIDC"]; ecs [label="ECS Fargate"]; db [label="RDS PostgreSQL",fillcolor="#e1f6ee"]; cache [label="ElastiCache Redis",fillcolor="#e1f6ee"]; queue [label="SQS"]; dlq [label="Dead-letter queue"]; ai [label="Bedrock
+Claude Haiku 4.5"];
+ iam -> ecs [label="deployment"]; ecs -> db; ecs -> cache; ecs -> queue; queue -> ecs [label="work items"]; queue -> dlq [label="failed messages"]; ecs -> ai [label="agent inference"];
+}
+user -> dns [label="DNS lookup"]; dns -> ecs [label="resolves application entry
+(logical view)",style=dashed]; ci -> iam [label="OIDC"];
+}

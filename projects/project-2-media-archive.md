@@ -1,119 +1,47 @@
-# Project 2: Cloud Media Archive Infrastructure
+# Enterprise Media Archive
 
-## Overview
+## Executive overview
 
-This project involved designing and implementing a serverless cloud-based archival system for a media production company that produces 6 shows per week with episodes ranging from 2-6 hours in 4K resolution.
+I designed a serverless archive for large media workloads. The professional CV reports a workload scale of 10 TB or more.
 
-## Business Problem
+## Business challenge
 
-The client faced critical storage and workflow challenges:
-- **Massive file sizes:** Raw 4K footage generated ~300 GB per episode
-- **Limited storage capacity:** Raw files were routinely deleted due to lack of space
-- **No retention strategy:** Only final edited exports (13-17 GB) were kept
-- **Re-editing challenges:** Unable to re-edit past content when only exports were available
-- **Inefficient collaboration:** 3 editors working with external hard drives and SSDs
-- **No structured retrieval:** No centralized system for finding and accessing archived content
-- **Previous cloud failures:** Past attempts at cloud storage faced reliability issues
+Large media files called for reliable transfers and long-term retention, with distinct permissions for uploaders and administrators.
 
-## Solution Architecture
+## Solution architecture
 
-Designed and implemented a fully serverless, scalable media archive solution using AWS services:
+A web interface uses Cognito for authentication and API Gateway and Lambda for upload coordination. Media files travel directly from the browser to Amazon S3.
 
-### Core Components
-- **Amazon S3:** Multi-tier storage strategy (Hot, Warm, Cold, Deep Archive)
-- **AWS Lambda:** Automated processing, metadata extraction, and lifecycle management
-- **Amazon API Gateway:** RESTful API for upload/download operations
-- **Amazon Cognito:** User authentication and role-based access control
-- **Amazon DynamoDB:** Metadata storage and fast search capabilities
-- **Amazon CloudFront:** Global content delivery for fast access
-- **Route 53:** DNS management and routing
-- **Amazon SNS:** Notifications for upload completion and system events
-- **CloudWatch:** Monitoring, logging, and operational insights
+## Technical implementation
 
-### Key Features
-- Direct internet-to-S3 ingestion for large files
-- Intelligent storage tiering based on access patterns
-- Metadata tagging for easy content retrieval
-- Flexible user permissions (upload, edit, view-only)
-- Cost optimization: pay for retrieval, not storage
-- No physical infrastructure required
+The design uses presigned URLs and multipart uploads. Parallel part transfers, retrying individual parts and handling interrupted uploads were design considerations. The web interface supports file management.
 
-## My Responsibilities
+## Personal responsibilities
 
-- Architected the complete serverless solution
-- Designed multi-tier storage strategy for cost optimization
-- Implemented Lambda functions for automated processing
-- Configured API Gateway for secure file operations
-- Set up Cognito user pools and access control
-- Designed DynamoDB schema for metadata management
-- Implemented CloudFront distribution for content delivery
-- Configured lifecycle policies for automated tiering
-- Set up monitoring and alerting with CloudWatch and SNS
-- Created documentation and user guides
+I designed the ingestion, access and storage lifecycle architecture for the archive.
 
-## Technical Implementation
+## Security and governance
 
-### Storage Strategy
-- **Hot Tier (S3 Standard):** Recently uploaded content, frequent access
-- **Warm Tier (S3 Infrequent Access):** Content accessed monthly
-- **Cold Tier (S3 Glacier):** Long-term archive, rare access
-- **Deep Archive (S3 Glacier Deep Archive):** Compliance and backup
+The design uses encryption and least-privilege IAM. Uploader and administrator roles scope file operations, and CloudWatch supports operational visibility.
 
-### Automation
-- Automated metadata extraction on upload
-- Lifecycle policies for automatic tiering
-- Event-driven processing with Lambda triggers
-- Automated notifications for key events
+## Cost optimisation
 
-### Security Considerations
-- User authentication via Cognito
-- Role-based access control (RBAC)
-- Encrypted storage (S3 encryption at rest)
-- Encrypted transit (HTTPS/TLS)
-- API Gateway authorization
-- CloudWatch audit logging
-- Least privilege IAM policies
+The lifecycle strategy moves eligible objects to archival tiers. S3 storage is chargeable, and tier selection needs to account for request and retrieval costs.
 
-## Outcome / Results
+## Project outcomes
 
-- ✅ **Successfully ingested 5+ TB of media content** directly to cloud storage
-- ✅ **Eliminated local storage limitations** - infinite scalable storage
-- ✅ **Enabled raw file retention** - no more permanent deletions
-- ✅ **Cost-effective solution** - tiered storage minimized ongoing costs
-- ✅ **Fast retrieval** - CloudFront CDN for global access
-- ✅ **Structured metadata** - easy search and discovery of archived content
-- ✅ **Improved collaboration** - 3 editors with controlled access
-- ✅ **Operational visibility** - monitoring and alerts for system health
-- ✅ **No infrastructure management** - fully serverless solution
+The engagement produced an archive design for the workload reported in the CV. Measured transfer performance and realised savings are unverified.
 
-## Architecture Diagram
+## Architecture diagram
 
-![Media Archive Architecture](../diagrams/project-2-architecture.png)
+![Enterprise Media Archive architecture](../diagrams/project-2-architecture.svg)
 
-## Technical Challenges Overcome
+[Editable Graphviz source](../diagrams/project-2-architecture.dot)
 
-1. **Large File Uploads:** Implemented multipart upload strategy for files over 100GB
-2. **Cost Optimization:** Designed intelligent tiering to minimize storage costs while maintaining accessibility
-3. **User Experience:** Created simple upload interface despite complex backend architecture
-4. **Reliability:** Built in retry logic and error handling for network interruptions
-5. **Metadata Management:** Automated extraction and indexing for fast retrieval
+## Technologies used
 
-## Lessons Learned
+Amazon S3, AWS Lambda, Amazon API Gateway, Amazon Cognito, AWS IAM and Amazon CloudWatch.
 
-- Serverless architectures excel for variable workloads and scale
-- S3 storage classes can dramatically reduce costs for infrequently accessed data
-- CloudFront significantly improves download speeds for global teams
-- Proper IAM and Cognito configuration is critical for security
-- Event-driven architectures simplify complex workflows
-- Monitoring and logging are essential for production systems
-- DynamoDB provides fast, scalable metadata search capabilities
+## Lessons learned
 
-## Technologies & AWS Services Used
-
-**Compute & Processing:** AWS Lambda  
-**Storage:** Amazon S3 (Standard, IA, Glacier, Glacier Deep Archive)  
-**Database:** Amazon DynamoDB  
-**Networking & Delivery:** Amazon CloudFront, Route 53, API Gateway  
-**Security & Identity:** AWS Cognito, IAM  
-**Monitoring & Notifications:** CloudWatch, SNS  
-**Development:** Python, Boto3, AWS SDK
+Separate upload coordination from file transfer and plan recovery at the part level for large uploads.
