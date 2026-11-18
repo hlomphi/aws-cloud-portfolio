@@ -34,6 +34,8 @@ The proof of concept successfully demonstrated backup and file restoration, iden
 
 ## Architecture diagram
 
+The two paths represent evaluated alternatives, not a combined production architecture. The browser flow requires authorization for individual file operations; Cognito alone does not authorize S3 access. Direct S3 arrows describe the logical data path, not public bucket access. Enterprise rollout and measured recovery performance are unverified.
+
 ![Cloud Backup & Recovery architecture](../diagrams/project-7-architecture.svg)
 
 [Editable Graphviz source](../diagrams/project-7-architecture.dot)
