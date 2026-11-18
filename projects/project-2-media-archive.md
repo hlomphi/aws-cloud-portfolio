@@ -2,7 +2,7 @@
 
 ## Executive overview
 
-I designed and implemented a serverless media archive adopted by a leading African podcast network, supporting over 10 TB of media workloads.
+I architected a serverless media archive for a leading African podcast network and collaborated with the delivery team on its implementation. During its operational lifecycle, the archive approached 20 TB of stored media, based on my project experience.
 
 ## Business challenge
 
@@ -18,7 +18,7 @@ The archive uses presigned URLs and multipart uploads. Parallel part transfers, 
 
 ## Personal responsibilities
 
-I designed and implemented the archive, including its ingestion, access and storage lifecycle architecture.
+I owned the solution architecture, including ingestion, access and storage lifecycle design, and contributed to implementation as part of the delivery team.
 
 ## Security and governance
 
@@ -30,7 +30,7 @@ The lifecycle strategy moves eligible objects to archival tiers. S3 storage is c
 
 ## Project outcomes
 
-The archive was implemented and used by the media production team. Measured transfer performance and realised savings are unverified.
+The archive was implemented and used by the media production team, reaching nearly 20 TB of stored media before the engagement ended. The platform is no longer in use by that client. Measured transfer performance and realised savings are unverified.
 
 ## Architecture diagram
 
