@@ -2,7 +2,7 @@
 
 ## Executive overview
 
-The proof of concept explored backup and recovery for laptops and workstations.
+The proof of concept successfully demonstrated file backup and restoration for laptops and workstations.
 
 ## Business challenge
 
@@ -30,7 +30,7 @@ Storage lifecycle and retention were part of the evaluation. Recovery needs info
 
 ## Project outcomes
 
-The proof of concept identified connectivity constraints and documented an alternative browser design. Enterprise rollout and measured recovery performance are unverified.
+The proof of concept successfully demonstrated backup and file restoration, identified connectivity constraints and documented an alternative browser design. Enterprise rollout and measured recovery performance are unverified.
 
 ## Architecture diagram
 
