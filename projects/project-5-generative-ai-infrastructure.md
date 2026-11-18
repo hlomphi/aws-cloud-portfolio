@@ -34,6 +34,8 @@ Production and staging were established, and the database and AI agent migration
 
 ## Architecture diagram
 
+DNS arrows show name resolution, not an application request path. The application ingress component is intentionally unspecified. GitHub Actions obtains short-lived AWS credentials through OIDC; Terraform and deployment tooling perform changes rather than IAM itself deploying ECS workloads.
+
 ![Generative AI SaaS Infrastructure architecture](../diagrams/project-5-architecture.svg)
 
 [Editable Graphviz source](../diagrams/project-5-architecture.dot)
