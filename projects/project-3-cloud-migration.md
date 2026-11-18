@@ -2,7 +2,7 @@
 
 ## Executive overview
 
-The professional CV reports an enterprise migration engagement involving 1.5 TB of data and six virtual machines. This case study documents the architecture and planning work.
+The enterprise cloud migration successfully moved 1.5 TB of data and six virtual machines to AWS. This case study documents the migration and associated recovery architecture.
 
 ## Business challenge
 
@@ -18,7 +18,7 @@ Technical work covered discovery, workload assessment, migration sequencing, net
 
 ## Personal responsibilities
 
-I contributed to discovery, cloud architecture and migration planning, including workload and recovery requirements.
+I led the migration engagement, including discovery, cloud architecture, migration planning and delivery.
 
 ## Security and governance
 
@@ -30,7 +30,7 @@ The design considered sizing workloads to demand and using storage lifecycle pol
 
 ## Project outcomes
 
-The engagement produced a documented migration, high-availability and disaster recovery design. Recovery time and recovery point objectives guided planning. Measured recovery results and cross-region failover tests are unverified.
+The migration was successfully implemented, alongside a documented high-availability and disaster recovery design. Recovery time and recovery point objectives guided planning. Measured recovery results and cross-region failover tests are unverified.
 
 ## Architecture diagram
 
