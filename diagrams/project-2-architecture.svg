@@ -9,7 +9,7 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(25.2 496.2)">
 <title>Architecture</title>
 <polygon fill="#ffffff" stroke="transparent" points="-25.2,25.2 -25.2,-496.2 468.2,-496.2 468.2,25.2 -25.2,25.2"/>
-<text text-anchor="middle" x="221.5" y="-449.4" font-family="DejaVu Sans" font-size="22.00" fill="#142c49">Enterprise media archive | Designed</text>
+<text text-anchor="middle" x="221.5" y="-449.4" font-family="DejaVu Sans" font-size="22.00" fill="#142c49">Enterprise media archive | Implemented</text>
 <g id="clust1" class="cluster">
 <title>cluster_aws</title>
 <polygon fill="#ffffff" stroke="black" points="8,-8 8,-361 303,-361 303,-8 8,-8"/>
