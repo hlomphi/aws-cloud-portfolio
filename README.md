@@ -39,8 +39,8 @@ I have over 20 years of IT experience, including over five years in cloud engine
 | --- | --- |
 | [Cloud E-commerce Infrastructure Modernisation](projects/project-1-lightsail-ecommerce.md) | Staging deployed; production access restricted pending public launch |
 | [Enterprise Media Archive](projects/project-2-media-archive.md) | Implemented; historically supported nearly 20 TB |
-| [Enterprise Cloud Migration & Disaster Recovery](projects/project-3-cloud-migration.md) | Migration and recovery design documented |
+| [Enterprise Cloud Migration & Disaster Recovery](projects/project-3-cloud-migration.md) | Migration completed; recovery design documented |
 | [AI-Powered Document Intelligence Platform](projects/project-4-document-intelligence.md) | Handed over; validation and legal review pending |
 | [Generative AI SaaS Infrastructure](projects/project-5-generative-ai-infrastructure.md) | Database and AI agent migrated; infrastructure reviewed |
 | [Intelligent Cloud Contact Centre](projects/project-6-cloud-contact-centre.md) | Proposed architecture; opportunity closed before deployment |
-| [Cloud Backup & Recovery](projects/project-7-cloud-backup-recovery.md) | Proof of concept; alternative designs evaluated |
+| [Cloud Backup & Recovery](projects/project-7-cloud-backup-recovery.md) | Proof of concept; backup and restoration demonstrated |
