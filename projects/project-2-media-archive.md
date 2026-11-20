@@ -2,7 +2,7 @@
 
 ## Executive overview
 
-I architected a serverless media archive for a leading African podcast network and collaborated with the delivery team on its implementation. During its operational lifecycle, the archive approached 20 TB of stored media, based on my project experience.
+I architected a serverless media archive for a media production organisation and collaborated with the delivery team on its implementation. During its operational lifecycle, the archive approached 20 TB of stored media, based on my project experience.
 
 ## Business challenge
 
@@ -30,7 +30,7 @@ The lifecycle strategy moves eligible objects to archival tiers. S3 storage is c
 
 ## Project outcomes
 
-The archive was implemented and used by the media production team, reaching nearly 20 TB of stored media before the engagement ended. The platform is no longer in use by that client. Measured transfer performance and realised savings are unverified.
+The archive was implemented and used by the media production team, reaching nearly 20 TB of stored media before the engagement ended. The figures represent historical usage, not current operational capacity. Measured transfer performance and realised savings are unverified.
 
 ## Architecture diagram
 
