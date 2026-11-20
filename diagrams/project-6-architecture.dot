@@ -1,0 +1,15 @@
+digraph Architecture {
+ graph [rankdir=TB, bgcolor="#ffffff", fontname="DejaVu Sans", fontsize=22, fontcolor="#142c49", labelloc=t, pad=0.35, nodesep=0.35, ranksep=0.58, compound=true, label="Cloud contact centre | Proposed / not deployed"];
+ node [shape=box, style="rounded,filled", fillcolor="#edf4ff", color="#6183aa", fontcolor="#142c49", fontname="DejaVu Sans", fontsize=11, margin="0.16,0.10"];
+ edge [color="#456786", fontcolor="#314d6c", fontname="DejaVu Sans", fontsize=10, arrowsize=0.7];
+
+caller [label="Caller"]; agent [label="Agent sequence"]; crm [label="CRM integration
+Proposed"];
+subgraph cluster_aws {
+ label="AWS | Region, telephony and number porting to validate";
+ connect [label="Amazon Connect"]; lex [label="Amazon Lex IVR"]; screen [label="Lambda
+Application-level screening"]; data [label="DynamoDB records",fillcolor="#e1f6ee"]; routing [label="Priority / sequential routing"]; voip [label="Voicemail recording"]; s3 [label="S3 recordings",fillcolor="#e1f6ee"]; transcript [label="Amazon Transcribe"];
+ connect -> lex -> screen -> routing; screen -> data [label="lookup"]; routing -> voip [label="unanswered"]; voip -> s3 -> transcript;
+}
+caller -> connect; routing -> agent [label="offer call"]; screen -> crm [label="proposed integration",style=dashed];
+}

@@ -1,64 +1,47 @@
-# Project 1: AWS Lightsail E-commerce Website
+# Cloud E-commerce Infrastructure Modernisation
 
-## Overview
+## Executive overview
 
-This project involved deploying and managing a dynamic PHP-based e-commerce website on AWS Lightsail for a real client.
+I owned the e-commerce infrastructure from 2024 through November 2026. Staging was deployed in October 2026. The new production infrastructure was built in November 2026 and access remained restricted pending public launch.
 
-## Business Problem
+## Business challenge
 
-The client needed a cost-effective, reliable online platform to showcase products and handle customer interactions without managing on-premise infrastructure.
+The existing PHP and MySQL platform needed reliable hosting and recovery, alongside a route to modern infrastructure.
 
-## Solution Architecture
+## Solution architecture
 
-- **AWS Lightsail** (Compute)
-- **Apache Web Server**
-- **PHP Application**
-- **MySQL Database**
-- **SSL Certificate** (HTTPS)
-- **GitHub Actions** for CI/CD automation
+The legacy application and MySQL database ran on Amazon Lightsail. The modernised design routes traffic through a load balancer to ECS Fargate in a VPC. Containers come from ECR, and the application uses RDS for PostgreSQL.
 
-## My Responsibilities
+## Technical implementation
 
-- Provisioned and configured AWS Lightsail instances
-- Deployed PHP application
-- Configured Apache virtual hosts
-- Managed SSL certificates
-- Set up staging and production environments
-- Implemented GitHub Actions-based deployment workflow
-- Troubleshot networking, DNS, and permissions issues
+I configured HTTPS, backups, DNS and application hosting on Lightsail and recovered the infrastructure after an instance failure. I provisioned the modern infrastructure with Terraform and completed a successful backup restoration test.
 
-## Security Considerations
+## Personal responsibilities
 
-- HTTPS enabled using SSL
-- Limited server access via SSH
-- Basic server hardening
-- Separation of staging and production environments
+I owned infrastructure delivery, audited the legacy environment and assessed integration with an external inventory system. Application development was handled separately. The AI layer was outside the implementation scope.
 
-## Outcome / Results
+## Security and governance
 
-- Successfully deployed a live e-commerce website
-- Improved reliability and availability
-- Client received a production-ready cloud-hosted solution
-- Automated deployment pipeline reduced manual errors
+I implemented production monitoring, GuardDuty, Security Hub and AWS Config. Production access remained restricted at the point documented here.
 
-## Architecture Diagram
+## Cost optimisation
 
-![E-commerce Architecture](../diagrams/project-1-architecture.png)
+The audit identified cross-region inefficiencies. Architecture optimisation reduced projected monthly launch infrastructure costs by approximately 26%.
 
-## Lessons Learned
+## Project outcomes
 
-- Practical AWS Lightsail management
-- Real-world deployment challenges
-- Importance of staging environments
-- CI/CD automation with GitHub Actions
-- Cost-effective cloud hosting for small businesses
+The legacy infrastructure was recovered, staging was deployed, production infrastructure was built and a backup was successfully restored. Public launch remained pending.
 
-## Technologies Used
+## Architecture diagram
 
-**Platform:** AWS Lightsail  
-**Web Server:** Apache  
-**Application:** PHP  
-**Database:** MySQL  
-**Security:** SSL/HTTPS  
-**CI/CD:** GitHub Actions  
-**Version Control:** Git/GitHub
+![Cloud E-commerce Infrastructure Modernisation architecture](../diagrams/project-1-architecture.svg)
+
+[Editable Graphviz source](../diagrams/project-1-architecture.dot)
+
+## Technologies used
+
+Amazon Lightsail, PHP, MySQL, Terraform, Amazon ECS on Fargate, Amazon ECR, Amazon VPC, load balancing, Amazon RDS for PostgreSQL, GuardDuty, Security Hub and AWS Config.
+
+## Lessons learned
+
+Run restoration checks before launch and use the legacy audit to identify avoidable costs in the replacement design.

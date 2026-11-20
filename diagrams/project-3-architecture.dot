@@ -1,0 +1,25 @@
+digraph Architecture {
+ graph [rankdir=TB, bgcolor="#ffffff", fontname="DejaVu Sans", fontsize=22, fontcolor="#142c49", labelloc=t, pad=0.35, nodesep=0.35, ranksep=0.58, compound=true, label="Enterprise migration and disaster recovery | Documented design"];
+ node [shape=box, style="rounded,filled", fillcolor="#edf4ff", color="#6183aa", fontcolor="#142c49", fontname="DejaVu Sans", fontsize=11, margin="0.16,0.10"];
+ edge [color="#456786", fontcolor="#314d6c", fontname="DejaVu Sans", fontsize=10, arrowsize=0.7];
+
+source [label="Existing environment
+Workloads and data"];
+subgraph cluster_primary {
+ label="AWS primary Region";
+ vpn [label="Site-to-Site VPN"];
+ subgraph cluster_vpc {
+  label="Amazon VPC | Controlled access";
+  ec2 [label="EC2 workloads
+Availability Zone A"]; ec2b [label="EC2 workloads
+Availability Zone B"]; db [label="RDS / storage",fillcolor="#e1f6ee"];
+  ec2 -> db; ec2b -> db;
+ }
+ backup [label="AWS Backup",fillcolor="#e1f6ee"]; db -> backup; ec2 -> backup; ec2b -> backup; vpn -> ec2; vpn -> ec2b;
+}
+subgraph cluster_recovery {
+ label="AWS recovery Region | Planned";
+ recovery [label="Recovery backup copies",fillcolor="#e1f6ee"];
+}
+source -> vpn [label="migration connectivity"]; backup -> recovery [label="planned copy",style=dashed];
+}

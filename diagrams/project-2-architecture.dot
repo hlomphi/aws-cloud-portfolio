@@ -1,0 +1,16 @@
+digraph Architecture {
+ graph [rankdir=TB, bgcolor="#ffffff", fontname="DejaVu Sans", fontsize=22, fontcolor="#142c49", labelloc=t, pad=0.35, nodesep=0.35, ranksep=0.58, compound=true, label="Enterprise media archive | Implemented"];
+ node [shape=box, style="rounded,filled", fillcolor="#edf4ff", color="#6183aa", fontcolor="#142c49", fontname="DejaVu Sans", fontsize=11, margin="0.16,0.10"];
+ edge [color="#456786", fontcolor="#314d6c", fontname="DejaVu Sans", fontsize=10, arrowsize=0.7];
+
+browser [label="Web file management
+Uploader / Administrator"];
+subgraph cluster_aws {
+ label="AWS service boundary";
+ auth [label="Amazon Cognito"]; api [label="API Gateway"]; fn [label="Lambda / IAM"]; s3 [label="Amazon S3
+Encrypted media storage",fillcolor="#e1f6ee"]; tier [label="S3 archival tiers",fillcolor="#e1f6ee"]; cw [label="CloudWatch"];
+ api -> fn; fn -> cw [label="logs",style=dashed]; fn -> s3 [label="scope upload"];
+ s3 -> tier [label="lifecycle"];
+}
+browser -> auth [label="sign-in"]; browser -> api [label="authenticated request"]; browser -> s3 [label="presigned multipart upload"];
+}
