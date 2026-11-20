@@ -44,3 +44,7 @@ I have over 20 years of IT experience, including over five years in cloud engine
 | [Generative AI SaaS Infrastructure](projects/project-5-generative-ai-infrastructure.md) | Database and AI agent migrated; infrastructure reviewed |
 | [Intelligent Cloud Contact Centre](projects/project-6-cloud-contact-centre.md) | Proposed architecture; opportunity closed before deployment |
 | [Cloud Backup & Recovery](projects/project-7-cloud-backup-recovery.md) | Proof of concept; backup and restoration demonstrated |
+
+## Portfolio scope
+
+These anonymised case studies describe logical architectures and documented engineering contributions, not production configuration inventories. Proposed components, proofs of concept and estimated savings are identified separately from verified outcomes. Client identifiers, proprietary source code and operational credentials are intentionally excluded.
