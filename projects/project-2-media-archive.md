@@ -14,7 +14,7 @@ A web interface uses Cognito for authentication and API Gateway and Lambda for u
 
 ## Technical implementation
 
-The archive uses presigned URLs and multipart uploads. Parallel part transfers, retrying individual parts and handling interrupted uploads were design considerations. The web interface supports file management.
+The archive uses short-lived presigned URLs for direct browser-to-S3 multipart uploads. API Gateway invokes Lambda to authorise and coordinate upload initiation, part signing and completion; the media bytes do not transit Lambda or API Gateway. Parallel part transfers, retrying individual parts and handling interrupted uploads were design considerations. The web interface supports file management.
 
 ## Personal responsibilities
 
@@ -26,7 +26,7 @@ The design uses encryption and least-privilege IAM. Uploader and administrator r
 
 ## Cost optimisation
 
-The lifecycle strategy moves eligible objects to archival tiers. S3 storage is chargeable, and tier selection needs to account for request and retrieval costs.
+Amazon S3 Lifecycle rules transition eligible objects to archival storage classes; EventBridge is not required for ordinary lifecycle transitions. S3 storage is chargeable, and tier selection needs to account for request and retrieval costs.
 
 ## Project outcomes
 
