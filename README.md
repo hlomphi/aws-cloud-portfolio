@@ -8,8 +8,9 @@ I have over 20 years of IT experience, including over five years in cloud engine
 
 ## AWS certifications
 
+Only credentials verified for publication should appear in this list. Other certification claims are withheld pending credential verification.
+
 - AWS Certified Solutions Architect – Associate
-- AWS Certified AI Practitioner
 - AWS Certified Cloud Practitioner
 
 ### Certification roadmap
