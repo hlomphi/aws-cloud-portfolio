@@ -2,7 +2,7 @@
 
 ## Executive overview
 
-I owned the e-commerce infrastructure from 2024 through November 2026. Staging was deployed in October 2026. The new production infrastructure was built in November 2026 and access remained restricted pending public launch.
+I owned the e-commerce infrastructure across legacy and modernisation phases. Staging was deployed and the new production infrastructure was built, with access restricted pending public launch.
 
 ## Business challenge
 
@@ -26,7 +26,7 @@ I implemented production monitoring, GuardDuty, Security Hub and AWS Config. Pro
 
 ## Cost optimisation
 
-The audit identified cross-region inefficiencies. Architecture optimisation reduced projected monthly launch infrastructure costs by approximately 26%.
+The audit identified cross-region inefficiencies. Architecture optimisation reduced projected monthly launch infrastructure costs.
 
 ## Project outcomes
 
