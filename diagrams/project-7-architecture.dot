@@ -1,0 +1,20 @@
+digraph Architecture {
+ graph [rankdir=TB, bgcolor="#ffffff", fontname="DejaVu Sans", fontsize=22, fontcolor="#142c49", labelloc=t, pad=0.35, nodesep=0.35, ranksep=0.58, compound=true, label="Cloud backup and recovery | Proof of concept / evaluated designs"];
+ node [shape=box, style="rounded,filled", fillcolor="#edf4ff", color="#6183aa", fontcolor="#142c49", fontname="DejaVu Sans", fontsize=11, margin="0.16,0.10"];
+ edge [color="#456786", fontcolor="#314d6c", fontname="DejaVu Sans", fontsize=10, arrowsize=0.7];
+
+device [label="Laptop / workstation"];
+subgraph cluster_files {
+ label="Evaluated | VPN and file-share path";
+ vpn [label="VPN
+Connectivity restrictions investigated"]; gateway [label="AWS Storage Gateway"];
+ vpn -> gateway [dir=both,label="file-share path"];
+}
+subgraph cluster_browser {
+ label="Evaluated | AWS browser-based alternative";
+ auth [label="Amazon Cognito"]; api [label="API Gateway"]; fn [label="Lambda"]; s3 [label="S3 backup objects
+Lifecycle policy",fillcolor="#e1f6ee"];
+ api -> fn; fn -> s3 [label="coordinate"];
+}
+device -> vpn [dir=both,label="file access"]; device -> auth [label="sign-in"]; device -> api [label="authenticated request"]; device -> s3 [dir=both,label="upload / recovery"];
+}

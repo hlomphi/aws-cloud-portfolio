@@ -1,0 +1,20 @@
+digraph Architecture {
+ graph [rankdir=TB, bgcolor="#ffffff", fontname="DejaVu Sans", fontsize=22, fontcolor="#142c49", labelloc=t, pad=0.35, nodesep=0.35, ranksep=0.58, compound=true, label="Document intelligence | Handed over / validation and legal review pending"];
+ node [shape=box, style="rounded,filled", fillcolor="#edf4ff", color="#6183aa", fontcolor="#142c49", fontname="DejaVu Sans", fontsize=11, margin="0.16,0.10"];
+ edge [color="#456786", fontcolor="#314d6c", fontname="DejaVu Sans", fontsize=10, arrowsize=0.7];
+
+user [label="Test users / reviewers"];
+subgraph cluster_cape {
+ label="AWS Cape Town | Application and storage";
+ auth [label="Cognito / MFA"]; s3 [label="S3 test documents",fillcolor="#e1f6ee"]; sqs [label="SQS"]; worker [label="Lambda / ECS Fargate"]; validate [label="Deterministic validation"]; review [label="Human exception review"]; db [label="Aurora PostgreSQL
+via RDS Data API",fillcolor="#e1f6ee"];
+ s3 -> sqs -> worker; validate -> review [label="exception"]; validate -> db [label="validated result"]; review -> db [label="resolution"];
+}
+subgraph cluster_london {
+ label="AWS London | AI processing";
+ native [label="Born-digital extraction"]; scan [label="Scanned document extraction"]; ai [label="Extraction services
+Bedrock / Textract / Bedrock Data Automation"];
+ native -> ai; scan -> ai;
+}
+user -> auth [label="sign-in"]; user -> s3 [label="test document ingestion"]; worker -> native; worker -> scan; ai -> validate [label="extracted data"];
+}
