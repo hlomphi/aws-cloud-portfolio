@@ -2,7 +2,7 @@
 
 ## Executive overview
 
-The enterprise cloud migration successfully moved 1.5 TB of data and six virtual machines to AWS. This case study documents the migration and associated recovery architecture.
+The enterprise cloud migration successfully moved terabyte-scale data and multiple virtual machines to AWS. This case study documents the migration and associated recovery architecture.
 
 ## Business challenge
 
@@ -34,7 +34,7 @@ The migration was successfully implemented, alongside a documented high-availabi
 
 ## Architecture diagram
 
-The diagram is a logical design, not an as-built inventory. The confirmed outcome is migration of six VMs and 1.5 TB; multi-AZ workload placement, RDS, VPN, AWS Backup configuration and cross-region copies must not be inferred to have been deployed or tested.
+The diagram is a logical design, not an as-built inventory. The confirmed outcome is migration of multiple VMs and terabyte-scale data; multi-AZ workload placement, RDS, VPN, AWS Backup configuration and cross-region copies must not be inferred to have been deployed or tested.
 
 ![Enterprise Cloud Migration & Disaster Recovery architecture](../diagrams/project-3-architecture.svg)
 
