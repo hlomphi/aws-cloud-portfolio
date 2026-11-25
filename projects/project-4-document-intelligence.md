@@ -2,7 +2,7 @@
 
 ## Executive overview
 
-The platform was handed over in November 2026. Final end-to-end validation and legal review were pending. Use was limited to synthetic or test data until de-identification controls could be validated.
+The platform was handed over. Final end-to-end validation and legal review were pending. Use was limited to synthetic or test data until de-identification controls could be validated.
 
 ## Business challenge
 
@@ -10,7 +10,7 @@ The workflow needed to process both born-digital and scanned documents while giv
 
 ## Solution architecture
 
-Cape Town hosts the application and storage infrastructure. AI processing uses London. Amazon S3 receives documents, and SQS, Lambda and ECS Fargate coordinate processing. Separate extraction paths handle born-digital and scanned documents.
+Application and storage infrastructure reside in one AWS region, with AI processing in another. Amazon S3 receives documents, and SQS, Lambda and ECS Fargate coordinate processing. Separate extraction paths handle born-digital and scanned documents.
 
 ## Technical implementation
 
@@ -18,7 +18,7 @@ The platform uses Amazon Bedrock, Textract and Bedrock Data Automation for extra
 
 ## Personal responsibilities
 
-I led the cloud architecture, security and compliance assessment and cost work across five architecture iterations.
+I led the cloud architecture, security and compliance assessment and cost work across multiple architecture iterations.
 
 ## Security and governance
 
@@ -26,11 +26,11 @@ Cognito provides authentication and MFA. CloudFormation defines infrastructure a
 
 ## Cost optimisation
 
-Removing six unnecessary VPC endpoints reduced estimated recurring infrastructure costs by approximately USD 87 per month.
+Removing unnecessary VPC endpoints reduced estimated recurring infrastructure costs.
 
 ## Project outcomes
 
-The AWS partner funding application was approved and the platform was handed over. Final validation and legal review remained open at handover.
+The platform was handed over. Final validation and legal review remained open at handover.
 
 ## Architecture diagram
 
