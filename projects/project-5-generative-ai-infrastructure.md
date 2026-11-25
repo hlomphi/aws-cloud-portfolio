@@ -14,7 +14,7 @@ Terraform manages AWS infrastructure. ECS Fargate runs application workloads wit
 
 ## Technical implementation
 
-I migrated the externally hosted PostgreSQL database to Amazon RDS and moved an AI agent to Amazon Bedrock using Claude Haiku 4.5. GitHub Actions uses OIDC to assume a scoped AWS IAM role for CI/CD without storing long-lived AWS access keys in GitHub. Terraform and deployment tooling perform infrastructure and service updates using those temporary credentials; IAM itself is not a deployment engine. Cloudflare manages DNS.
+I migrated the externally hosted PostgreSQL database to Amazon RDS and moved an AI agent to Amazon Bedrock using a Claude Haiku model. GitHub Actions uses OIDC to assume a scoped AWS IAM role for CI/CD without storing long-lived AWS access keys in GitHub. Terraform and deployment tooling perform infrastructure and service updates using those temporary credentials; IAM itself is not a deployment engine. Cloudflare manages DNS.
 
 ## Personal responsibilities
 
